@@ -1,3 +1,10 @@
 #ignoreable files
 gitPull.sh
 gitPush.sh
+*.obj
+*.uf2
+
+#ignoreable directories
+*/[Bb]uild/
+*/[Oo]bj/
+./pico/
