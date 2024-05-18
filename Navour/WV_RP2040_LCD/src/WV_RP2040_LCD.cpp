@@ -23,6 +23,12 @@ WV_RP2040::WV_RP2040_LCD::WV_RP2040_LCD() :
     isInit = true;
 }
 
+WV_RP2040::WV_RP2040_LCD & WV_RP2040::WV_RP2040_LCD::get_Inst()
+{
+    static WV_RP2040_LCD __instance;
+    return __instance;
+}
+
 bool WV_RP2040::WV_RP2040_LCD::is_Initiated()
 {
     return isInit;

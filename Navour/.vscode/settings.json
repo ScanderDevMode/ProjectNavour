@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "binary_info.h": "c"
+        "binary_info.h": "c",
+        "list": "cpp",
+        "*.tcc": "cpp"
     }
 }

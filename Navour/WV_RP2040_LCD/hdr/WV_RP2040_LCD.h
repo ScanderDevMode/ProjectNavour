@@ -89,13 +89,36 @@ namespace WV_RP2040
         void init_Onboard_LCD_Pins();
 
         /*! \brief Constructor
-         *  \ingroup WV_RP2040_ADC
+         *  \ingroup WV_RP2040_LCD
          *  
          *  Is private, cannot be called.
          */
         WV_RP2040_LCD();
 
+        /*! \brief Copy Constructor
+         *  \ingroup WV_RP2040_LCD
+         *  
+         *  Is private, cannot be called.
+         */
+        WV_RP2040_LCD( const WV_RP2040_LCD & ) = delete;
+
+        /*! \brief Operator =
+         *  \ingroup WV_RP2040_LCD
+         *  
+         *  Is private, cannot be called.
+         */
+        WV_RP2040_LCD& operator=( const WV_RP2040_LCD & ) = delete;
+
     public:
+
+        /*! \brief Get Instance
+        *   \ingroup WV_RP2040_LCD
+        *
+        *   \category Global Function
+        *
+        *   Get the static instance of the singleton class WV_RP2040_LCD.
+        */
+        static WV_RP2040_LCD & get_Inst();
 
         /*! \brief Is Initated
         *   \ingroup WV_RP2040_LCD

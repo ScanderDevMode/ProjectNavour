@@ -13,5 +13,6 @@ add_library(WV_RP2040_Utility  ${LIB_SOURCES})
 #link the dependencies
 target_link_libraries(WV_RP2040_Utility
     pico_stdlib
+    pico_util
     hardware_adc
 )

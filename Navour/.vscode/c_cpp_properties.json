@@ -4,7 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/loopman/Lab/Pico_Projects/pico-sdk/src/common/pico_binary_info/include"
+                "/home/loopman/ext_d/Lab/Pico_Projects/pico-sdk/src/common/pico_binary_info/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/arm-none-eabi-gcc",

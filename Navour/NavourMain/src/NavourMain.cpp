@@ -3,7 +3,8 @@
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
 
-#include "WV_RP_2040_LCD.h"
+#include "ADC_Util.h"
+#include "WV_RP2040_LCD.h"
 
 //function to embbed the signature
 bool embbedSignature() {
@@ -15,7 +16,9 @@ bool embbedSignature() {
 int main() {
     
     bool lit = false;
-    WV_RP2040::WV_RP2040_LCD lcd;
+    auto& adc = WV_RP2040::WV_RP2040_ADC::get_Inst();
+    auto& lcd = WV_RP2040::WV_RP2040_LCD::get_Inst();
+
 
     //embbed Signature Information
     embbedSignature();
@@ -30,6 +33,8 @@ int main() {
     while (true) {
         printf("Hello from Navour!!!\n");
         printf("The world is your Navmesh!!!\n");
+        float tempC = adc.get_OnboardTemparature(false);
+        printf("Onboard Sensor Temp : %.2f`C", tempC);
         lcd.set_Backlight(lit);
         lit = !lit;
         sleep_ms(1000);
