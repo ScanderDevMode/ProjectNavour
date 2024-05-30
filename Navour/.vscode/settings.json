@@ -2,6 +2,7 @@
     "files.associations": {
         "binary_info.h": "c",
         "list": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "vector": "cpp"
     }
 }

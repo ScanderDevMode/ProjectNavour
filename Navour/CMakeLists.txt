@@ -1,6 +1,11 @@
 #Check the minimum cmake version
 cmake_minimum_required(VERSION 3.12)
 
+#set project name and standards
+project(Navour C CXX ASM)
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+
 #include the external files to set the SDK and extras paths
 include(pico_sdk_import.cmake)
 include(pico_extras_import_optional.cmake)
@@ -18,11 +23,6 @@ FetchContent_Declare(
 
 #Actually fetch the content and make it available for linking
 FetchContent_MakeAvailable(lvgl)
-
-#set project name and standards
-project(Navour C CXX ASM)
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 17)
 
 #check the pico sdk version
 if (PICO_SDK_VERSION_STRING VERSION_LESS "1.3.0")

@@ -127,7 +127,11 @@ float WV_RP2040::WV_RP2040_ADC::get_sampled_result( const WV_RP2040_ADC_AINSEL_P
     adc_fifo_setup( false, false, 0, false, false );
 
     //get average
-    
+    float sum = 0.0f;
+    for (int i = 1; i <= list.getCount(); ++i) {
+        sum += list[i - 1];
+    }
+    float average = sum / sampleCount;
 
-    return 0;
+    return average;
 }
