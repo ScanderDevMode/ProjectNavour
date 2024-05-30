@@ -607,7 +607,7 @@ namespace WV_RP2040 {
             //copy the list
             WV_RP2040_List _t(this);
             
-            for (int c = 1, int j = this->count; c <= this->count; c++, j--) {
+            for (int c = 1, j = this->count; c <= this->count; c++, j--) {
                 getNode(c)->setData(_t.getNode(j)->getData());
             }
         }
@@ -623,4 +623,4 @@ namespace WV_RP2040 {
     };
 }
 
-#endif;
+#endif

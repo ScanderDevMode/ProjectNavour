@@ -29,7 +29,7 @@ WV_RP2040::WV_RP2040_ADC::WV_RP2040_ADC()
     isADCInit = true;
 }
 
-float WV_RP2040::WV_RP2040_ADC::get_VConvFact(bool inFarhenhite)
+float WV_RP2040::WV_RP2040_ADC::get_VConvFact()
 {
     return voltageConversionFactor;
 }
@@ -84,10 +84,16 @@ float WV_RP2040::WV_RP2040_ADC::get_PowVolt()
 #if CYW43_USES_VSYS_PIN
     cyw43_thread_enter();
     // Make sure cyw43 is awake
-    cyw43_arch_gpio_get( CYW43_WL_GPIO_VBUS_PIN );
-#endif
+    int vbus_status = cyw43_arch_gpio_get(CYW43_WL_GPIO_VBUS_PIN);
+    cyw43_thread_exit();
+    return (vbus_status ? 5.0f : 0.0f); // Example logic to return a voltage based on VBUS status
+#else
     adc_gpio_init ( PICO_VSYS_PIN ); //use the hw biased pin
-    
+    adc_select_input(PICO_VSYS_PIN); // Select the correct ADC input
+    uint16_t adc_value = adc_read(); // Read the ADC value
+    float voltage = adc_value * get_VConvFact(); // Convert the ADC value to voltage
+    return voltage;
+#endif
 #endif
 }
 

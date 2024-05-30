@@ -131,7 +131,7 @@ namespace WV_RP2040 {
         *   
         *   \return Returns the Voltage Conversion factor
         */
-        static float get_VConvFact( bool inFarhenhite );
+        static float get_VConvFact();
 
         /*! \brief Convert Temparature
         *   \ingroup WV_RP2040_ADC

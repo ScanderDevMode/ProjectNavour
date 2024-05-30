@@ -5,6 +5,7 @@ gitPush.sh
 *.uf2
 
 #ignoreable directories
-*/[Bb]uild/
-*/[Oo]bj/
-./pico/
+*/[Bb]uild
+*/[Oo]bj
+./pico
+*/.vscode

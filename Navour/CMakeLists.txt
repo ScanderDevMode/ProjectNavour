@@ -5,6 +5,20 @@ cmake_minimum_required(VERSION 3.12)
 include(pico_sdk_import.cmake)
 include(pico_extras_import_optional.cmake)
 
+#include the fetch content feature to fetch lvgl from git
+include(FetchContent)
+
+#Declare what you want to Fetch
+FetchContent_Declare(
+    lvgl
+    GIT_REPOSITORY https://github.com/lvgl/lvgl.git
+    GIT_TAG origin/master # Use the latest commit on the main branch
+    GIT_SHALLOW TRUE #Only fetch the latest commit
+)
+
+#Actually fetch the content and make it available for linking
+FetchContent_MakeAvailable(lvgl)
+
 #set project name and standards
 project(Navour C CXX ASM)
 set(CMAKE_C_STANDARD 11)
