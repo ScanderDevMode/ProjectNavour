@@ -1,14 +1,4 @@
-#include <stdio.h>
-#include <pico/stdlib.h>
-
-#include "hardware/adc.h"
-
-#if CYW43_USES_VSYS_PIN
-#include "pico/cyw43_arch.h"
-#endif
-
 #include "ADC_Util.h"
-#include "List_Util.h"
 
 
 WV_RP2040::WV_RP2040_ADC & WV_RP2040::WV_RP2040_ADC::get_Inst()

@@ -3,6 +3,7 @@
 
 #include <vector>
 #include "pico/stdlib.h"
+#include "hardware/gpio.h"
 
 /** \file WV_RP2040_Utility/GPIO_Util.h
  *  \headerfile GPIO_Util.h
@@ -121,6 +122,7 @@ void digital_input_default(const DIGITAL_VALUE &pin, const DIGITAL_VALUE &value)
  * 
  *  Toggles the state of a GPIO pin.
  * 
+#include <pico/stdlib.h>
  *  \param pin The pin to toggle
  */
 void toggle_pin(const DIGITAL_VALUE &pin);

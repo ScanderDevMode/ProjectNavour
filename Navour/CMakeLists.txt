@@ -21,6 +21,9 @@ FetchContent_Declare(
     GIT_SHALLOW TRUE #Only fetch the latest commit
 )
 
+# Set LVGL build options before making it available
+set(LVGL_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+
 #Actually fetch the content and make it available for linking
 FetchContent_MakeAvailable(lvgl)
 

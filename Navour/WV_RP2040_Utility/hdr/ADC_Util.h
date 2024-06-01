@@ -1,6 +1,18 @@
 #ifndef _RP2040_ADC_UTIL_HEADER_
 #define _RP2040_ADC_UTIL_HEADER_
 
+#include <stdio.h>
+#include "pico/stdlib.h"
+
+#include "hardware/adc.h"   
+
+#if CYW43_USES_VSYS_PIN
+#include "pico/cyw43_arch.h"
+#endif
+
+#include "List_Util.h"
+
+
 /** \file WV_RP2040_Utility/ADC_Util.h
  *  \headerfile ADC_Util.h
  *  \defgroup WV_RP2040_ADC WV_RP2040_ADC api can be used to use onboard ADC functionality.
